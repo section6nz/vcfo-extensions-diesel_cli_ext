@@ -141,6 +141,7 @@ pub fn parse(
                 str_model.push_str("\n}\n\n");
             }
             str_model.push_str(&format!("pub mod {} {{\n", &vec[2]));
+            str_model.push_str("\tuse super::*;");
             is_schema = true;
         } else if cmp.contains("table!") {
             // add derives
